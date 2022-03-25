@@ -1,81 +1,85 @@
 {
-    "name": "simpleledger-post-office-server",
-    "version": "1.0.0",
-    "description": "PSF fork of the SLP Post Office Server",
-    "main": "post-office.js",
-    "scripts": {
-        "start": "node post-office.js",
-        "config": "node ./cli/index.js",
-        "test": "npm run lint; nyc --reporter=text mocha --timeout=15000 test/unit/",
-        "test:integration": "mocha --timeout=30000 test/integration/",
-        "lint": "standard --env mocha --fix",
-        "coverage": "nyc report --reporter=text-lcov | coveralls",
-        "coverage:report": "nyc --reporter=html mocha --timeout 25000 test/unit/"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server.git"
-    },
-    "keywords": [
-        "slp",
-        "bch",
-        "bitcoin",
-        "post",
-        "office",
-        "tokens"
-    ],
-    "author": "Chris Troutner <chris.troutner@gmail.com>",
-    "contributors": [
-        "Andre Cabrera (andrecabrera@protonmail.ch)"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server/issues"
-    },
-    "homepage": "https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server#readme",
-    "dependencies": {
-        "@psf/bch-js": "^3.5.5",
-        "bignumber.js": "^9.0.0",
-        "bitcoincashjs-lib": "Bitcoin-com/bitcoincashjs-lib#v4.0.1",
-        "bitcore-payment-protocol": "^8.1.1",
-        "chalk": "^4.1.0",
-        "clear": "^0.1.0",
-        "clui": "^0.3.6",
-        "configstore": "^5.0.1",
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "figlet": "^1.5.0",
-        "inquirer": "^7.3.2",
-        "lodash": "^4.17.19",
-        "minimist": "^1.2.5",
-        "touch": "^3.1.0"
-    },
-    "devDependencies": {
-        "chai": "^4.2.0",
-        "coveralls": "^3.1.0",
-        "eslint": "^6.7.2",
-        "eslint-config-prettier": "6.7.0",
-        "eslint-config-standard": "^14.1.1",
-        "eslint-plugin-prettier": "3.1.1",
-        "eslint-plugin-standard": "^4.0.1",
-        "husky": "3.1.0",
-        "mocha": "^8.1.1",
-        "nyc": "^15.1.0",
-        "prettier": "1.19.1",
-        "semantic-release": "^17.1.1",
-        "sinon": "^9.0.2"
-    },
-    "release": {
-        "publish": [
-            {
-                "path": "@semantic-release/npm",
-                "npmPublish": false
-            }
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run lint"
-        }
+  "name": "simpleledger-post-office-server",
+  "version": "1.0.0",
+  "description": "PSF fork of the SLP Post Office Server",
+  "main": "post-office.js",
+  "scripts": {
+    "start": "node post-office.js",
+    "config": "node ./cli/index.js",
+    "test": "npm run lint; nyc --reporter=text mocha --timeout=15000 test/unit/",
+    "test:integration": "mocha --timeout=30000 test/integration/",
+    "lint": "standard --env mocha --fix",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage:report": "nyc --reporter=html mocha --timeout 25000 test/unit/",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server.git"
+  },
+  "keywords": [
+    "slp",
+    "bch",
+    "bitcoin",
+    "post",
+    "office",
+    "tokens"
+  ],
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "contributors": [
+    "Andre Cabrera (andrecabrera@protonmail.ch)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server/issues"
+  },
+  "homepage": "https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server#readme",
+  "dependencies": {
+    "@psf/bch-js": "^3.5.5",
+    "bignumber.js": "^9.0.0",
+    "bitcoincashjs-lib": "Bitcoin-com/bitcoincashjs-lib#v4.0.1",
+    "bitcore-payment-protocol": "^8.1.1",
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "figlet": "^1.5.0",
+    "inquirer": "^7.3.2",
+    "lodash": "^4.17.20",
+    "minimist": "^1.2.5",
+    "touch": "^3.1.0",
+    "@snyk/protect": "latest"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "3.1.0",
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0",
+    "prettier": "1.19.1",
+    "semantic-release": "^17.1.1",
+    "sinon": "^9.0.2"
+  },
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": false
+      }
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
     }
+  },
+  "snyk": true
 }
