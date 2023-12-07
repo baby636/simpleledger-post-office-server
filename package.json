@@ -34,7 +34,7 @@
     },
     "homepage": "https://github.com/Permissionless-Software-Foundation/simpleledger-post-office-server#readme",
     "dependencies": {
-        "@psf/bch-js": "^3.5.5",
+        "@psf/bch-js": "^4.15.1",
         "bignumber.js": "^9.0.0",
         "bitcoincashjs-lib": "Bitcoin-com/bitcoincashjs-lib#v4.0.1",
         "bitcore-payment-protocol": "^8.1.1",
@@ -59,7 +59,7 @@
         "eslint-plugin-prettier": "3.1.1",
         "eslint-plugin-standard": "^4.0.1",
         "husky": "3.1.0",
-        "mocha": "^8.1.1",
+        "mocha": "^8.3.0",
         "nyc": "^15.1.0",
         "prettier": "1.19.1",
         "semantic-release": "^17.1.1",
